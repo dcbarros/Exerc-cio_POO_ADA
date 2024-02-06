@@ -3,47 +3,57 @@
 
 Representa um disco musical.
 
-- Atributos
+### Atributos
+```
 **nome:** String - O nome do disco.
 **gravadora:** String - O nome da gravadora do disco.
 **genero:** String - O gênero musical do disco.
 **anoLancamento:** Integer - O ano de lançamento do disco.
 **musicasAlbum:** List<Musica> - Lista de músicas presentes no disco.
+```
 
-- Métodos
+
+### Métodos
+```
 **Disco(String nome, String gravadora, String genero, Integer anoLancamento, List<Musica> musicasAlbum): Construtor da classe.**
 **getNome():** String: Retorna o nome do disco.
 **getGravadora():** String: Retorna o nome da gravadora do disco.
 **getGenero():** String: Retorna o gênero musical do disco.
 **getAnoLancamento():** Integer: Retorna o ano de lançamento do disco.
 **getMusicasAlbum():** List<Musica>: Retorna a lista de músicas do disco.
-
+```
 ## Classe Musica
 Representa uma música.
 
-- Atributos
+### Atributos
+```
 **titulo:** String - O título da música.
 **nomeCantor:** String - O nome do cantor da música.
 **tempoMusica:** Integer - O tempo da música em segundos.
-
-- Métodos
+```
+### Métodos
+```
 **Musica(String titulo, String nomeCantor, Integer tempoMusica): Construtor da classe.**
 **getTitulo():** String: Retorna o título da música.
 **getNomeCantor():** String: Retorna o nome do cantor da música.
 **getTempoMusica():** Integer: Retorna o tempo da música em segundos.
+```
 
 ## Classe PlayerMusica
 Representa um player de música.
 
-- Atributos
+### Atributos
+```
 **bandeja:** List<Disco> - Lista de discos na bandeja do player.
 **volume:** Integer - Volume do player.
 **faixaSelecionada:** Musica - Música atualmente selecionada.
 **discoSelecionado:** Disco - Disco atualmente selecionado.
 **indexFaixa:** Integer - Índice da faixa atual.
 **indexDisco:** Integer - Índice do disco atual.
+```
 
-- Métodos
+### Métodos
+```
 **PlayerMusica(): Construtor da classe.**
 **inserirDisco(Disco disco):** Insere um disco na bandeja do player.
 **removerDisco(int posicaoDisco):** Remove um disco da bandeja do player.
@@ -65,3 +75,4 @@ Representa um player de música.
 **timeMusica(int tempo):** Exibe o tempo da música no formato HH:MM:SS.
 **pausarSegundo():** Pausa a execução por 2 segundos.
 **limparConsole():** Limpa o console.
+```
