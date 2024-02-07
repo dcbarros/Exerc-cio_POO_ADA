@@ -49,6 +49,7 @@ public class PlayerMusica {
 
     public void avancarFaixa(){
         this.indexFaixa++;
+        this.indexFaixa = this.indexFaixa%this.getDiscoSelecionado().getMusicasAlbum().size();
         this.faixaSelecionada = this.discoSelecionado.getMusicasAlbum().get(this.indexFaixa); 
     }
 
@@ -87,13 +88,21 @@ public class PlayerMusica {
                             faixa.getNomeCantor());
         timeMusica(faixa.getTempoMusica());
         pausarSegundo();
-        if(this.indexFaixa < this.discoSelecionado.getMusicasAlbum().size() - 1){
-            avancarFaixa();
-        }else{
-            this.indexDisco++;
-            this.indexDisco = this.indexDisco%this.bandeja.size();
-            selecionarDisco(indexDisco);
-        }
+        // if(this.indexFaixa < this.discoSelecionado.getMusicasAlbum().size() - 1){
+        //     avancarFaixa();
+        // }else{
+        //     this.indexDisco++;
+        //     this.indexDisco = this.indexDisco%this.bandeja.size();
+        //     selecionarDisco(indexDisco);
+        // }
+    }
+
+    public void pausa() {
+        System.out.printf("A musica %s está pausada...\n", this.faixaSelecionada.getTitulo());
+    }
+
+    public void parar() {
+        System.out.printf("A musica %s está parada...\n", this.faixaSelecionada.getTitulo());
     }
 
     public List<Disco> getBandeja() {
@@ -123,8 +132,8 @@ public class PlayerMusica {
     public void setIndexDisco(Integer indexDisco) {
         this.indexDisco = indexDisco;
     }
-
-    private void timeMusica(int tempo){
+    //Esse método vou deixar ele publico por conveniência, porém ele deve ser privado!
+    public void timeMusica(int tempo){
         int tempoHoras = tempo/3600;
         int tempoMinutos = tempo%3600/60;
         int tempoSegundos = tempo%60;
@@ -134,7 +143,7 @@ public class PlayerMusica {
                             tempoMinutos,
                             tempoSegundos);
     }
-    
+
     private void pausarSegundo() {
         try {
             Thread.sleep(2000);
